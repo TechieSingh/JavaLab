@@ -1,0 +1,61 @@
+import java.util.Scanner;
+class Rectangle
+{
+	double length,width,area;
+	String colour;
+	Scanner s=new Scanner(System.in);
+	
+	void set_length()
+	{
+		System.out.println("Enter the length of rectangle");
+		length=s.nextDouble();
+	}
+	void set_width()
+	{
+		System.out.println("Enter the width of rectangle");
+		width=s.nextDouble();	
+	}
+	void set_colour()
+	{
+		System.out.println("Enter the colour of rectangle");
+		colour=s.next();
+	}
+	double find_area()
+	{
+		area=length*width;
+		return area;
+	}
+	void compare(Rectangle ob)
+	{
+		if(area==ob.area && colour.contentEquals(ob.colour))
+			System.out.println("Matching");
+		else
+			System.out.println("Not matching");
+	}	
+}
+
+public class rect
+{
+	public static void main(String args[])
+	{
+		double area;
+		Rectangle r1 = new Rectangle();
+		Rectangle r2 = new Rectangle();
+		
+		System.out.println("Enter first Rectangle Dimentions");
+		r1.set_length();
+		r1.set_width();
+		r1.set_colour();
+		area=r1.find_area();
+		System.out.println("\n1st Rectangle Area:"+area);
+		
+		System.out.println("Enter Second Rectangle Dimentions");
+		r2.set_length();
+		r2.set_width();
+		r2.set_colour();
+		area=r2.find_area();
+		System.out.println("\n2nd Rectangle Area:"+area);
+		
+		r1.compare(r2);
+	}
+}
